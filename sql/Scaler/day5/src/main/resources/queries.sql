@@ -62,7 +62,7 @@ from
     movies
 order by
     revenue desc
-limit 1 OFFSET 2;
+limit 1 offset 2;
 
 -- Question Q4
 --------------------------------
@@ -222,10 +222,10 @@ order by id;
 -- 2. Display all the movies and their percentage up to two decimals based on the new column created.
 
 
-SELECT
+select
     original_title,
-    ROUND((revenue - budget) / budget * 100, 2) AS Profit_percentage
-FROM
+    round((revenue - budget) / budget * 100, 2) AS Profit_percentage
+from
     movies;
 
 -- Question Q10

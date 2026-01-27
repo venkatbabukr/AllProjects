@@ -1,4 +1,5 @@
 -- Question: Q7
+--------------------------------------------------------
 -- Problem Statement:
 
 -- In the context of managing data for an Olympic event, you are tasked with sorting a table of countries based on their medal counts.
@@ -29,3 +30,14 @@ order by
     silver desc,
     bronze desc,
     country
+
+-- Question: Q8
+--------------------------------------------------------
+
+-- Write a SQL query that retrieves and displays all movie titles in descending order of popularity.
+-- In cases where movies have the same level of popularity, prioritize them based on reven
+select
+    title
+from
+    movies
+order by popularity desc, revenue desc
