@@ -115,11 +115,12 @@ def validate_emails(emails):
     list: A list containing only the valid email addresses.
     """
     ans = []
-    email_pattern = r'^[a-zA-Z0-9._-]+@[a-zA-Z0-9.]+\.[a-zA-Z]{2,}$'
+    # Fix: Corrected the character set to include '+' as a literal character in the local part.
+    email_pattern = r'^[\w\-]+(?:[\w\.\+\-])*@(?:[a-zA-Z\d]+\.)+[a-zA-Z]{2,}$'
     ans = [email for email in emails if re.match(email_pattern, email)]
 
     return ans
 
-emails_list = [ "john@example.com", "alice@company.org", "bob@email", "susan@123.com", "invalid.email", "no_domain@", "@missing_local", "invalid@@domain.com", "john.doe@my_example.com"]
+emails_list = [ "a123-b.c@d.com", "venkat@a..com", "venkat@yahoo.co.in", "john@example.com", "alice@company.org", "bob@email", "susan@123.com", "invalid.email", "no_domain@", "@missing_local", "invalid@@domain.com", "john.doe@my_example.com"]
 valid_emails = validate_emails(emails_list)
 print(valid_emails)
